@@ -1,26 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap');
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  --color-point: #C8603E;
+  --color-border: #DFD9CE;
+  --color-text: #271E18;
+  --color-icon: #74695F;
+  --color-background: #FCFAF4;
+  --color-ivory: #FDFBF9;
+  --color-dark-icon: #A09891;
+
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.button {
+  @apply p-2.5 rounded-xl bg-point text-sm text-ivory font-bold
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.button-secondary {
+  @apply py-4 px-[115px] text-[14px] bg-point text-ivory rounded-xl 
+}
+
+.button-signUp {
+  @apply py-4 w-full bg-point text-ivory text-[15px] rounded-xl max-w-[730px] mx-auto
+}
+
+.share-button {
+  @apply py-[10px] px-[15px] rounded-xl items-center bg-point text-ivory
+}
+
+.create-button {
+  @apply bg-point p-5 rounded-md text-ivory font-bold md:max-w-[200px]
+}
+
+.delete-button {
+  @apply text-[10px] text-dark-icon border border-border p-2 rounded-md
+}
+
+.categoryText {
+  @apply text-sm uppercase font-bold text-point font-sans;
+}
+
+.titleText {
+  @apply text-4xl font-bold font-serif 
+}
+
+.ptagText {
+  @apply text-sm text-dark-icon font-sans font-semibold
+}
+
+.ptagText2 {
+  @apply text-sm text-text font-sans 
+}
+
+.border {
+  @apply w-full block flex-col gap-2 border-border rounded-xl border-2 p-2
+}
+
+.border2 {
+  @apply border border-border rounded-md p-2 w-full flex 
+}
+
+.boldText {
+  @apply text-[14px] font-bold
+}
+
+.errorMsg {
+  @apply text-red-500
+}
+
+.xsText {
+  @apply text-[13px] font-semibold font-sans
 }
