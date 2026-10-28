@@ -32,6 +32,7 @@ const CreatePostPage = () => {
                         content: values.content,
                         image: imageForm,
                         category: values.category,
+                        ingredient:values.ingredient
                     })
                 })}>
                 <div className="flex flex-col gap-[18px]">
@@ -57,8 +58,12 @@ const CreatePostPage = () => {
                         {errors.image && <ErrorMessage error={errors.image.message!} />}
                     </div>
                     <div className="flex flex-col gap-1">
-                        <label htmlFor="content" >Add content(optional)</label>
-                        <textarea {...register("content")} className="border2"></textarea>
+                        <label htmlFor="content" >Content</label>
+                        <textarea {...register("content")} className="border2" placeholder="Content:" />
+                    </div>
+                    <div className="flex flex-col gap-1">
+                        <label htmlFor="content" >Ingredient</label>
+                        <textarea {...register("ingredient")} className="border2" placeholder="Ingredient:" />
                     </div>
                     <button className="button-signUp">Publish recipe</button>
                     {error && <ErrorMessage error={error.message} />}

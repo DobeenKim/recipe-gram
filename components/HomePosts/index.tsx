@@ -68,7 +68,7 @@ const HomePosts = ({posts}:{posts: HomePostType}) => {
                             <div className="pb-7 flex flex-col gap-3">
                                 <Link className="block" href={`/${post.slug}`}>
                                     <div className="">
-                                        <div className="max-w-1020px">
+                                        <div className="max-w-[730px] mx-auto">
                                             {post.image && 
                                                 <img className="w-full rounded-2xl" src={post.image} alt={post.title} />
                                             }
@@ -78,7 +78,7 @@ const HomePosts = ({posts}:{posts: HomePostType}) => {
                                                 <p className="categoryText">{post.category}</p>
                                                 <p className="ptagText">by @{post.author.username}</p>
                                             </div>
-                                            <div className="max-w-[310px] flex flex-col gap-[13px]">
+                                            <div className="max-w-[310px] md:max-w-[730px] flex flex-col gap-[13px]">
                                                 <h3 className="titleText break-words">{post.title}</h3>
                                                 <p className="ptagText break-words">
                                                     {post.content && post.content.length > 70 

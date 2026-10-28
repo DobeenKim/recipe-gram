@@ -9,7 +9,7 @@ const LoginPage = () => {
             <p className="ptagText pb-9">Sign in to discover recipes from home cooks.</p>
             <LoginForm />
             <Link className="text-sm text-icon" href="/auth/signup">Don't you have an account yet?  
-                <span className="text-point font-semibold"> Sign up here!</span>
+                <span className="text-point font-semibold cursor-pointer"> Sign up here!</span>
             </Link>
         </div>
     )

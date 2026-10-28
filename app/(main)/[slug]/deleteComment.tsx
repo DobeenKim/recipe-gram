@@ -7,7 +7,7 @@ const DeleteButton = ({commentId} : {commentId:  string}) => {
         mutationFn: DeletCommentAction
     })
     return (
-        <div onClick={() => mutate(commentId)} className="max-w-fit p-0 delete-button">Delete</div>
+        <div onClick={() => mutate(commentId)} className="max-w-fit p-0 delete-button cursor-pointer">Delete</div>
     )
 }
 

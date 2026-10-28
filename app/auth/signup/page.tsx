@@ -8,7 +8,7 @@ const signupPage = () => {
             <h2 className="font-serif text-[35px] pb-7">Good food starts here.</h2>
             <SignUpForm />
             <Link className="text-sm text-icon" href="/auth/login">Already have an account?
-                <span className="text-point font-semibold">Log in here!</span>
+                <span className="text-point font-semibold cursor-pointer">Log in here!</span>
             </Link>
         </div>
     )

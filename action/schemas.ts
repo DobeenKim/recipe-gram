@@ -16,6 +16,7 @@ export const postSchema = z.object({
     content: z.string().optional(),
     image: z.instanceof(FormData).optional(),
     category: z.string().min(1, "Category is required"),
+    ingredient: z.string().min(6, "You must write ingredient at least 6 characters long"),
 })
 
 export const commentSchema = z.object({

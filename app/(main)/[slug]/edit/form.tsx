@@ -8,7 +8,7 @@ import { useMutation } from '@tanstack/react-query'
 import { EditPost } from '@/action/edit-page-action'
 import z from 'zod'
 
-const EditPageForm = ({initialValues, postId} : {initialValues: Pick<Tables<"recipe_posts">, "title" | "content" | "image" | "category">, postId:string}) => {
+const EditPageForm = ({initialValues, postId} : {initialValues: Pick<Tables<"recipe_posts">, "title" | "content" | "image"  | "category" | "ingredient">, postId:string}) => {
     const postImageSchema = postSchema.omit({image: true})
         .extend({image: z.unknown().transform(value => {return value as FileList}).optional()})
 
@@ -18,6 +18,7 @@ const EditPageForm = ({initialValues, postId} : {initialValues: Pick<Tables<"rec
             title: initialValues.title,
             category: initialValues.category || "",
             content: initialValues.content || undefined,
+            ingredient: initialValues.ingredient || undefined,
             image:initialValues.image || undefined
         }
     })
@@ -39,22 +40,27 @@ const EditPageForm = ({initialValues, postId} : {initialValues: Pick<Tables<"rec
                     title:values.title,
                     category:values.category,
                     content:values.content,
+                    ingredient:values.ingredient,
                     image: imageForm
                 }, postId
             })}
         )}>
             <div className='flex flex-col gap-[18px] max-w-[730px] mx-auto'>
                 <div className="flex flex-col gap-1">
-                    <label htmlFor="title">Add a title</label>
+                    <label htmlFor="title">Title</label>
                     <input {...register("title")} className="border2"></input>
                     {errors.title && <ErrorMessage error={errors.title.message!} />}
                 </div>
                 <div className="flex flex-col gap-1">
-                        <label htmlFor="content" >Add content(optional)</label>
-                        <textarea {...register("content")} className="border2"></textarea>
-                    </div>
+                    <label htmlFor="content" >Content</label>
+                    <textarea {...register("content")} className="border2" placeholder="Content:" />
+                </div>
                 <div className="flex flex-col gap-1">
-                    <label htmlFor="content">Add some content(optional)</label>
+                    <label htmlFor="content" >Ingredient</label>
+                    <textarea {...register("ingredient")} className="border2" placeholder="Ingredient:" />
+                </div>
+                <div className="flex flex-col gap-1">
+                    <label htmlFor="content">Category</label>
                     <select {...register("category")} className="border2  w-full" required>
                             <option value="">Select category</option>
                             <option value="Meat">Meat</option>

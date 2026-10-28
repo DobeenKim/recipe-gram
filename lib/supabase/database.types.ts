@@ -108,6 +108,7 @@ export type Database = {
           created_at: string
           id: string
           image: string | null
+          ingredient: string | null
           slug: string
           title: string
         }
@@ -118,6 +119,7 @@ export type Database = {
           created_at?: string
           id?: string
           image?: string | null
+          ingredient?: string | null
           slug: string
           title: string
         }
@@ -128,6 +130,7 @@ export type Database = {
           created_at?: string
           id?: string
           image?: string | null
+          ingredient?: string | null
           slug?: string
           title?: string
         }

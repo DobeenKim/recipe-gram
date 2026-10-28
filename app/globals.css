@@ -13,6 +13,9 @@
   --color-background: #FCFAF4;
   --color-ivory: #FDFBF9;
   --color-dark-icon: #A09891;
+  --color-white : #FFFFFF;
+  --color-border-gray: #F0EEE9;
+  --color-hover: #CCE7C8
 
   --font-sans: "Inter", sans-serif;
   --font-serif: "Playfair Display", serif;

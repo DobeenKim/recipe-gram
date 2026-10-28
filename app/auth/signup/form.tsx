@@ -37,7 +37,7 @@ const SignUpForm = () => {
                     <input className="border" {...register("password")} placeholder="password ..." type="password"></input>
                     {errors.password && <ErrorMessage error={errors.password.message!} />}
                 </div>
-                <button className="button-signUp mb-[38px]">Sign Up</button>
+                <button className="button-signUp mb-[38px] cursor-pointer">Sign Up</button>
                 {error && <ErrorMessage error={error.message} />}
             </form>
         </div>

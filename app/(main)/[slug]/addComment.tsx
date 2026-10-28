@@ -29,7 +29,7 @@ const AddComment = ({postId} : {postId:string}) => {
                     <textarea id="content" {...register("content")} placeholder="Add your comment..."  className="w-full resize-none outline-none bg-transparent"/>
                     {errors.content && <ErrorMessage error={errors.content.message!} />}
                 </div>
-                <button className=" bg-point p-5 rounded-md text-ivory font-bold"><Send className="w-4 h-4 mx-auto"/>Post</button>
+                <button className=" bg-point p-5 rounded-md text-ivory font-bold cursor-pointer"><Send className="w-4 h-4 mx-auto"/>Post</button>
             </div>
             {error && <ErrorMessage error={error.message} />}
         </form>
